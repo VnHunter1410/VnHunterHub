@@ -1,3 +1,6 @@
+-- Made by VnHunter and ToiLaSkidder
+-- Vui lòng đừng ăn cắp source
+-- Free mà đem bán = làm con chó
 shared.LoaderTitle = "Đăng Ký Kênh VnHunter đê:>";
 shared.LoaderKeyFrames = {
     [1] = {
@@ -320,49 +323,49 @@ local v15 = v14:CreateWindow({
 });
 local v16 = {
     Home = v15:AddTab({
-        Title = "Thông Tin"
+        Title = "Thông Tin/Information"
     }),
     Main = v15:AddTab({
-        Title = "Cày"
+        Title = "Cày/Farm"
     }),
     Sea = v15:AddTab({
-        Title = "Sự Kiện"
+        Title = "Sự Kiện/Events"
     }),
     ITM = v15:AddTab({
-        Title = "Vật Phẩm"
+        Title = "Vật Phẩm/Items"
     }),
     Setting = v15:AddTab({
-        Title = "Cài Đặt"
+        Title = "Cài Đặt/Settings"
     }),
     Status = v15:AddTab({
-        Title = "Máy Chủ"
+        Title = "Máy Chủ/Server"
     }),
     Stats = v15:AddTab({
-        Title = "Chỉ Số"
+        Title = "Chỉ Số/Stats"
     }),
     Player = v15:AddTab({
-        Title = "Người Chơi"
+        Title = "Người Chơi/Player"
     }),
     Teleport = v15:AddTab({
-        Title = "Dịch Chuyển"
+        Title = "Dịch Chuyển/Teleport"
     }),
     Visual = v15:AddTab({
-        Title = "Giả"
+        Title = "Visual"
     }),
     Fruit = v15:AddTab({
-        Title = "Trái"
+        Title = "Trái cây/Fruit"
     }),
     Raid = v15:AddTab({
-        Title = "Tập Kích"
+        Title = "Tập Kích/Dungeon"
     }),
     Race = v15:AddTab({
-        Title = "Tộc"
+        Title = "Tộc/Race"
     }),
     Shop = v15:AddTab({
-        Title = "Cửa Hàng"
+        Title = "Cửa Hàng/Shop"
     }),
     Misc = v15:AddTab({
-        Title = "Khác"
+        Title = "Khác/Other"
     })
 };
 local v17 = v14.Options;
@@ -2675,9 +2678,9 @@ if game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Respawn
 end
 v16.Home:AddButton({
     Title = "Discord",
-    Description = "Giao Lưu",
+    Description = "Giao Lưu cùng VnHunter",
     Callback = function()
-        setclipboard("https://discord.gg/7netAEMS2R");
+        setclipboard("https://discord.gg/jpyqysdtDa");
     end
 });
 _G.FastAttackStrix_Mode = "Super Fast Attack";
@@ -2693,7 +2696,7 @@ spawn(function()
     end
 end);
 local v48 = v16.Main:AddDropdown("DropdownSelectWeapon", {
-    Title = "Vũ Khí",
+    Title = "Vũ Khí/",
     Description = "",
     Values = {
         "Melee",
@@ -8293,28 +8296,28 @@ end);
 v17.ToggleUpgrade:SetValue(false);
 local v56 = v16.Shop:AddSection("Khả Năng");
 v16.Shop:AddButton({
-    Title = "Nhảy",
+    Title = "Nhảy nhiều lần/Geppo",
     Description = "",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki", "Geppo");
     end
 });
 v16.Shop:AddButton({
-    Title = "Haki Đấm",
+    Title = "Haki màu/Buso",
     Description = "",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki", "Buso");
     end
 });
 v16.Shop:AddButton({
-    Title = "Dịch Chuyển",
+    Title = "Dịch Chuyển/Soru",
     Description = "",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki", "Soru");
     end
 });
 v16.Shop:AddButton({
-    Title = "Haki Quan Sát",
+    Title = "Haki Quan Sát/Ken",
     Description = "",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("KenTalk", "Buy");
@@ -8473,7 +8476,7 @@ v16.Shop:AddButton({
 });
 local v56 = v16.Shop:AddSection("Khác");
 v16.Shop:AddButton({
-    Title = "Đổi Chỉ Số",
+    Title = "Reset Chỉ Số",
     Description = "",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward", "Refund", "1");
@@ -8533,7 +8536,7 @@ v16.Shop:AddButton({
     end
 });
 v16.Misc:AddButton({
-    Title = "Tham Gia Máy Chủ Lại",
+    Title = "Vào Lại Máy Chủ/Rejoin",
     Description = "",
     Callback = function()
         game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer);
@@ -9321,7 +9324,7 @@ spawn(function()
     end
 end);
 v14:Notify({
-    Title = "VnHunter",
-    Content = "Tải Xong",
-    Duration = 10
+    Title = "Thông báo",
+    Content = "Script đã tải xong, chúc bạn đạt được mục tiêu mong muốn!",
+    Duration = 5
 });
