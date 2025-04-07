@@ -6741,10 +6741,11 @@ v16.Player:AddButton({
         for v541, v542 in pairs(game:GetService("Players"):GetChildren()) do
             table.insert(v112, v542.Name);
 end);
-v16.Player:AddButton({
+local v1234 = v16.Player:AddToggle({
     Title = "Xem Player",
     Description = "Bật/Tắt Xem Player",
-    Callback = function(Value)
+    Default = true
+});
         if Value then
             if selectedPlayer and selectedPlayer.Character then
                 localplr = LocalPlayer
@@ -8719,9 +8720,23 @@ local v56 = v16.Misc:AddSection("Khác");
 local v151 = v16.Misc:AddToggle("ToggleRejoin", {
     Title = "Vào Lại Máy Chủi",
     Description = "",
-    Default = true
+    Default = false
+v151:OnChanged(function(v381)
+    _G.AutoRejoin = v381;
 end);
-v16.Misc:AddButton({
+v17.ToggleRejoin:SetValue(true);
+spawn(function()
+    while wait() do
+        if _G.AutoRejoin then
+            getgenv().rejoin = game:GetService("CoreGui").RobloxPromptGui.promptOverlay.ChildAdded:Connect(function(v808)
+                if ((v808.Name == "ErrorPrompt") and v808:FindFirstChild("MessageArea") and v808.MessageArea:FindFirstChild("ErrorFrame")) then
+                    game:GetService("TeleportService"):Teleport(game.PlaceId);
+                end
+            end);
+        end
+    end
+end);
+local v69 = v16.Misc:AddButton("FixLag", {
         Title = "Fix Lag",
         Description = "Tăng FPS",
         Callback = function()
@@ -8771,21 +8786,6 @@ v16.Misc:AddButton({
         end
     end
     
-v151:OnChanged(function(v381)
-    _G.AutoRejoin = v381;
-end);
-v17.ToggleRejoin:SetValue(true);
-spawn(function()
-    while wait() do
-        if _G.AutoRejoin then
-            getgenv().rejoin = game:GetService("CoreGui").RobloxPromptGui.promptOverlay.ChildAdded:Connect(function(v808)
-                if ((v808.Name == "ErrorPrompt") and v808:FindFirstChild("MessageArea") and v808.MessageArea:FindFirstChild("ErrorFrame")) then
-                    game:GetService("TeleportService"):Teleport(game.PlaceId);
-                end
-            end);
-        end
-    end
-end);
 local v56 = v16.Misc:AddSection("Sương");
 local function v152()
     local v382 = game:GetService("Lighting");
@@ -8814,7 +8814,7 @@ v16.Misc:AddButton({
     end
 });
 local v153 = v16.Misc:AddToggle("ToggleAntiBand", {
-    Title = "Chống Band",
+    Title = "Chống Ban",
     Description = "",
     Default = true
 });
