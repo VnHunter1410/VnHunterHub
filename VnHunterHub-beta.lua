@@ -6741,10 +6741,10 @@ v16.Player:AddButton({
         for v541, v542 in pairs(game:GetService("Players"):GetChildren()) do
             table.insert(v112, v542.Name);
 end);
-local v1234 = v16.Player:AddToggle({
+local v1269 = v16.Player:AddToggle({
     Title = "Xem Player",
     Description = "Bật/Tắt Xem Player",
-    Default = true
+    Default = false
 });
         if Value then
             if selectedPlayer and selectedPlayer.Character then
@@ -8736,7 +8736,7 @@ spawn(function()
         end
     end
 end);
-local v69 = v16.Misc:AddButton("FixLag", {
+local v6969 = v16.Misc:AddButton("FixLag", {
         Title = "Fix Lag",
         Description = "Tăng FPS",
         Callback = function()
