@@ -353,12 +353,14 @@ v5:Destroy();
             end
         end
     end
+    
+    function SpectatePlayer()
 if Value then
-            if _G.SelectedPly and _G.SelectedPly.Character then
+            if _G.SelectPly and [_G.SelectPly].Character then
                 localplr = LocalPlayer
                 localplr.CameraMaxZoomDistance = 100
                 localplr.CameraMinZoomDistance = 0.1
-                workspace.CurrentCamera.CameraSubject = [_G.SelectedPly].Character
+                workspace.CurrentCamera.CameraSubject = [_G.SelectPly].Character
             end
         else
             workspace.CurrentCamera.CameraSubject = LocalPlayer.Character
