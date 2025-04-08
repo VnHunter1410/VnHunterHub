@@ -8592,6 +8592,7 @@ v16.Misc:AddButton({
        FPSBooster()
     end
 });
+v16.Misc:AddButton({
     Title = "Đổi Máy Chủ",
     Description = "",
     Callback = function()
