@@ -366,6 +366,7 @@ if Value then
             workspace.CurrentCamera.CameraSubject = LocalPlayer.Character
         end
     end
+end
 -- UI
 local v14 = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))();
 local v15 = v14:CreateWindow({
@@ -6833,6 +6834,11 @@ local v1269 = v16.Player:AddToggle("ToggleSpectatePlayer", {
 v1269:OnChanged(function(v1270)
     SpectatePlayer()
 end);
+if 1=2 then
+print("yes")
+else
+print("not")
+end
 local v56 = v16.Player:AddSection("Khác"),
 local v115 = v16.Player:AddToggle("ToggleNoClip", {
     Title = "Đi Xuyên Tường",
