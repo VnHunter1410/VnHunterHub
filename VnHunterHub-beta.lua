@@ -311,7 +311,7 @@ v5:Destroy();
 --         pcall(v422);
 --     end
 -- end);
--- FPS Booster Code
+-- FPS Booster + Spectate Code
     function FPSBooster()
         local decalsyeeted = true
         local g = game
@@ -351,6 +351,17 @@ v5:Destroy();
             if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
                 e.Enabled = false
             end
+        end
+    end
+if Value then
+            if _G.SelectedPly and _G.SelectedPly.Character then
+                localplr = LocalPlayer
+                localplr.CameraMaxZoomDistance = 100
+                localplr.CameraMinZoomDistance = 0.1
+                workspace.CurrentCamera.CameraSubject = [_G.SelectedPly].Character
+            end
+        else
+            workspace.CurrentCamera.CameraSubject = LocalPlayer.Character
         end
     end
 -- UI
@@ -6812,7 +6823,15 @@ spawn(function()
         end
     end
 end);
-local v56 = v16.Player:AddSection("Khác");
+local v1269 = v16.Player:AddToggle("ToggleSpectatePlayer", {
+    Title = "Xem Player",
+    Description = "",
+    Default = false
+});
+v1269:OnChanged(function(v1270)
+    SpectatePlayer()
+end);
+local v56 = v16.Player:AddSection("Khác"),
 local v115 = v16.Player:AddToggle("ToggleNoClip", {
     Title = "Đi Xuyên Tường",
     Description = "",
