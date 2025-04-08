@@ -311,6 +311,7 @@ v5:Destroy();
 --         pcall(v422);
 --     end
 -- end);
+local selectedPlayer = _G.SelectPly
 -- FPS Booster + Spectate Code
     function FPSBooster()
         local decalsyeeted = true
@@ -356,11 +357,11 @@ v5:Destroy();
     
     function SpectatePlayer()
 if Value then
-            if _G.SelectPly and [_G.SelectPly].Character then
+            if selectedPlayer and selectedPlayer.Character then
                 localplr = LocalPlayer
                 localplr.CameraMaxZoomDistance = 100
                 localplr.CameraMinZoomDistance = 0.1
-                workspace.CurrentCamera.CameraSubject = [_G.SelectPly].Character
+                workspace.CurrentCamera.CameraSubject = selectedPlayer.Character
             end
         else
             workspace.CurrentCamera.CameraSubject = LocalPlayer.Character
