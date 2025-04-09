@@ -97,9 +97,6 @@ local v16 = {
     }),
     Misc = v15:AddTab({
         Title = "Khác/Other"
-    }),
-    Music = v15:AddTab({
-        Title = "Bật Nhạc"
     })
 };
 local v17 = v14.Options;
@@ -9064,12 +9061,13 @@ spawn(function()
         end
     end
 end);
-local v178 = v16.Music:AddToggle("ThuocLaoNgheAn", {
+local v69 = v16.Misc:AddSection("Nhạc");
+local v178 = v16.Misc:AddToggle("ToggleNhacTLNAR", {
     Title = "Thuốc Lào Nghệ An Remix",
     Description ="",
     Default = false
 });
 v178:OnChanged(function(v416)
-     joinSound:Play()
+     thuoclaonghean:Play()
 end);
 Notification("<Color=Green>Script Loaded!<Color=/>"):Display();
