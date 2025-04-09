@@ -8495,6 +8495,15 @@ local v153 = v16.Misc:AddToggle("ToggleAntiBand", {
 v153:OnChanged(function(v384)
     _G.AntiBand = v384;
 end);
+local v999 = v16.Misc:AddSection("Nhạc");
+local v178 = v16.Misc:AddToggle("ToggleNhacTLNAR", {
+    Title = "Thuốc Lào Nghệ An Remix",
+    Description ="",
+    Default = false
+});
+v178:OnChanged(function(v416)
+     thuoclaonghean:Play()
+end);
 local v154 = {
     17884881,
     120173604,
@@ -9060,14 +9069,5 @@ spawn(function()
             end
         end
     end
-end);
-local v69 = v16.Misc:AddSection("Nhạc");
-local v178 = v16.Misc:AddToggle("ToggleNhacTLNAR", {
-    Title = "Thuốc Lào Nghệ An Remix",
-    Description ="",
-    Default = false
-});
-v178:OnChanged(function(v416)
-     thuoclaonghean:Play()
 end);
 Notification("<Color=Green>Script Loaded!<Color=/>"):Display();
