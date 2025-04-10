@@ -7,7 +7,7 @@ Notification("<Color=Red>Popcat Hub <Color=/>"):Display();
 wait(0.5);
 Notification("<Color=Yellow>Script made by Nguyen Minh Huy and VnHunter<Color=/>"):Display();
 Notification("<Color=Blue>https://discord.gg/jpyqysdtDa<Color=/>"):Display();
-Notification("<Color=Pink>Version 1.0.0<Color,=/>"):Display();
+Notification("<Color=Pink>Version 1.0.0<Color=/>"):Display();
 wait(1);
 repeat
     wait();
