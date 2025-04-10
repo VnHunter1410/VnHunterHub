@@ -7,6 +7,7 @@ Notification("<Color=Red>Popcat Hub <Color=/>"):Display();
 wait(0.5);
 Notification("<Color=Yellow>Script made by Nguyen Minh Huy and VnHunter<Color=/>"):Display();
 Notification("<Color=Blue>https://discord.gg/jpyqysdtDa<Color=/>"):Display();
+Notification("<Color=Pink>Version 1.0.0<Color,=/>"):Display();
 wait(1);
 repeat
     wait();
@@ -58,11 +59,9 @@ end
     end
 -- UI
 local v14 = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))();
-local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
-local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local v15 = v14:CreateWindow({
     Title = "PopCat Hub",
-    SubTitle = "Blox Fruit V1.0.0",
+    SubTitle = "Blox Fruit",
     TabWidth = 160,
     Theme = "Dark",
     Acrylic = false,
@@ -2381,7 +2380,7 @@ v23.BorderSizePixel = 0;
 v23.Position = UDim2.new(0.120833337 - 0.1, 0, 0.0952890813 + 0.01, 0);
 v23.Size = UDim2.new(0, 50, 0, 50);
 v23.Draggable = true;
-v23.Image = "http://www.roblox.com/asset/?id=110187382535965";
+v23.Image = "http://www.roblox.com/asset/?id=128478872776931";
 v24.Parent = v23;
 v24.CornerRadius = UDim.new(0, 12);
 v25.Parent = v23;
@@ -4435,7 +4434,7 @@ if Sea3 then
         end
         for v728, v729 in pairs(game:GetService("Workspace").Map.MysticIsland:GetDescendants()) do
             if v729:IsA("MeshPart") then
-                if (v729.MeshId == "rbxassetid://83190276951914") then
+                if (v729.MeshId == "rbxassetid://128478872776931") then
                     return v729;
                 end
             end
@@ -9079,19 +9078,3 @@ spawn(function()
     end
 end);
 Notification("<Color=Green>Script Loaded!<Color=/>"):Display();
-SaveManager:SetLibrary(v14)
-InterfaceManager:SetLibrary(v14)
-SaveManager:IgnoreThemeSettings()
-
--- You can add indexes of elements the save manager should ignore
-SaveManager:SetIgnoreIndexes({})
-
--- use case for doing it this way:
--- a script hub could have themes in a global folder
--- and game configs in a separate folder per game
-InterfaceManager:SetFolder("PopCatHub")
-SaveManager:SetFolder("PopCatHub/BloxFruitsSibidi")
-
-InterfaceManager:BuildInterfaceSection(Tabs.Settings)
-SaveManager:BuildConfigSection(Tabs.Settings)
-SaveManager:LoadAutoloadConfig()
