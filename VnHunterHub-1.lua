@@ -1,6 +1,7 @@
 -- Made by VnHunter and ToiLaSkidder
 -- Vui lòng đừng ăn cắp source
 -- Free mà đem bán = làm con chó
+game.Players.LocalPlayer.PlayerGui.Main.Version.Visible = false
 local v0 = require(game:GetService("ReplicatedStorage").Notification);
 local Notification = v0.new
 Notification("<Color=Red>Popcat Hub <Color=/>"):Display();
