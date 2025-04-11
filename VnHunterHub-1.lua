@@ -2431,6 +2431,18 @@ v16.Home:AddButton({
         setclipboard("https://discord.gg/jpyqysdtDa");
     end
 });
+v16.Home:AddButton({
+    Title = "Youtube: VnHunter",
+    Description = "Link Youtube người làm ra",
+    Callback = function()
+        setclipboard("https://youtube.com/@vnhunter-1410");
+    end
+v16.Home:AddButton({
+    Title = "Youtube: Nguyen Minh Huy",
+    Description = "Link Youtube người làm ra",
+    Callback = function()
+        setclipboard("https://youtube.com/@nghuyzzz");
+    end
 _G.FastAttackStrix_Mode = "Super Fast Attack";
 spawn(function()
     while wait() do
