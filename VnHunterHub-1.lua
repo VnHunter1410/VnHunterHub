@@ -2395,7 +2395,7 @@ v25.Rate = 0;
 v25.Speed = NumberRange.new(5, 10);
 v25.Color = ColorSequence.new(Color3.fromRGB(255, 85, 255), Color3.fromRGB(85, 255, 255));
 local v47 = v26:Create(v23, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-    Rotation = 0
+    Rotation = 360
 });
 v23.MouseButton1Down:Connect(function()
     v25.Rate = 100;
