@@ -2405,7 +2405,7 @@ v23.MouseButton1Down:Connect(function()
     v47:Play();
     game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.End, false, game);
     v47.Completed:Connect(function()
-        v23.Rotation = 90;
+        v23.Rotation = 360;
     end);
     local v235 = v26:Create(v23, TweenInfo.new(0.2, Enum.EasingStyle.Bounce, Enum.EasingDirection.Out), {
         Size = UDim2.new(0, 60, 0, 60)
