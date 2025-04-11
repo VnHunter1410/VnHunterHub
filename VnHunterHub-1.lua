@@ -4,32 +4,32 @@
 game.Players.LocalPlayer.PlayerGui.Main.Version.Visible = false
 local RunService = game:GetService("RunService")
 
-local lastUpdateTime = tick()
-local frameCount = 0
+local Icon = require(game.ReplicatedStorage.Icon)
+local NumberSpinner = require(game.ReplicatedStorage.NumberSpinner)
+
 local fps = 0
 
--- Create a GUI element to display the FPS
-local player = game.Players.LocalPlayer
-local playerGui = player:WaitForChild("PlayerGui")
-local fpsDisplay = Instance.new("TextLabel")
-fpsDisplay.Size = UDim2.new(0, 200, 0, 50) -- Set the size of the display
-fpsDisplay.Position = UDim2.new(0, 10, 0, 10) -- Position it on the screen
-fpsDisplay.BackgroundTransparency = 0.5
-fpsDisplay.TextColor3 = Color3.new(1, 1, 1) -- White text
-fpsDisplay.TextScaled = true
-fpsDisplay.Font = Enum.Font.SourceSansBold
-fpsDisplay.Parent = playerGui
-
--- Update FPS in real-time
 RunService.RenderStepped:Connect(function()
-    frameCount = frameCount + 1
-    local currentTime = tick()
-    if currentTime - lastUpdateTime >= 1 then
-        fps = frameCount
-        frameCount = 0
-        lastUpdateTime = currentTime
-    end
-    fpsDisplay.Text = "FPS: " .. fps
+	fps += 1
+end)
+
+local icon = Icon.new()
+icon:setRight()
+icon:lock()
+icon:setSize(75, 32)
+icon:give(function(ic)
+	local spinner = NumberSpinner.new()
+	ic:convertLabelToNumberSpinner(spinner)
+	spinner.Duration = 0.25
+	spinner.Prefix = ""
+	spinner.Suffix = " FPS"
+	spinner.Decimals = 0
+	coroutine.wrap(function() 
+		while task.wait(1) do
+			spinner.Value = fps
+			fps = 0
+		end
+	end)()
 end)
 local v0 = require(game:GetService("ReplicatedStorage").Notification);
 local Notification = v0.new
