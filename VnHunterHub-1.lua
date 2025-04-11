@@ -2,35 +2,6 @@
 -- Vui lòng đừng ăn cắp source
 -- Free mà đem bán = làm con chó
 game.Players.LocalPlayer.PlayerGui.Main.Version.Visible = false
-local RunService = game:GetService("RunService")
-
-local Icon = require(game.ReplicatedStorage.Icon)
-local NumberSpinner = require(game.ReplicatedStorage.NumberSpinner)
-
-local fps = 0
-
-RunService.RenderStepped:Connect(function()
-	fps += 1
-end)
-
-local icon = Icon.new()
-icon:setRight()
-icon:lock()
-icon:setSize(75, 32)
-icon:give(function(ic)
-	local spinner = NumberSpinner.new()
-	ic:convertLabelToNumberSpinner(spinner)
-	spinner.Duration = 0.25
-	spinner.Prefix = ""
-	spinner.Suffix = " FPS"
-	spinner.Decimals = 0
-	coroutine.wrap(function() 
-		while task.wait(1) do
-			spinner.Value = fps
-			fps = 0
-		end
-	end)()
-end)
 local v0 = require(game:GetService("ReplicatedStorage").Notification);
 local Notification = v0.new
 Notification("<Color=Red>Popcat Hub <Color=/>"):Display();
