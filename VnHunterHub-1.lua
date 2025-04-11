@@ -12,6 +12,25 @@ local fps = 0
 local player = game.Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 local fpsDisplay = Instance.new("TextLabel")
+fpsDisplay.Size = UDim2.new(0, 200, 0, 50) -- Set the size of the display
+fpsDisplay.Position = UDim2.new(0, 10, 0, 10) -- Position it on the screen
+fpsDisplay.BackgroundTransparency = 0.5
+fpsDisplay.TextColor3 = Color3.new(1, 1, 1) -- White text
+fpsDisplay.TextScaled = true
+fpsDisplay.Font = Enum.Font.SourceSansBold
+fpsDisplay.Parent = playerGui
+
+-- Update FPS in real-time
+RunService.RenderStepped:Connect(function()
+    frameCount = frameCount + 1
+    local currentTime = tick()
+    if currentTime - lastUpdateTime >= 1 then
+        fps = frameCount
+        frameCount = 0
+        lastUpdateTime = currentTime
+    end
+    fpsDisplay.Text = "FPS: " .. fps
+end)
 local v0 = require(game:GetService("ReplicatedStorage").Notification);
 local Notification = v0.new
 Notification("<Color=Red>Popcat Hub <Color=/>"):Display();
@@ -68,25 +87,6 @@ end
             end
         end
     end
-fpsDisplay.Size = UDim2.new(0, 200, 0, 50) -- Set the size of the display
-fpsDisplay.Position = UDim2.new(0, 10, 0, 10) -- Position it on the screen
-fpsDisplay.BackgroundTransparency = 0.5
-fpsDisplay.TextColor3 = Color3.new(1, 1, 1) -- White text
-fpsDisplay.TextScaled = true
-fpsDisplay.Font = Enum.Font.SourceSansBold
-fpsDisplay.Parent = playerGui
-
--- Update FPS in real-time
-RunService.RenderStepped:Connect(function()
-    frameCount = frameCount + 1
-    local currentTime = tick()
-    if currentTime - lastUpdateTime >= 1 then
-        fps = frameCount
-        frameCount = 0
-        lastUpdateTime = currentTime
-    end
-    fpsDisplay.Text = "FPS: " .. fps
-end)
 -- UI
 local v14 = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))();
 local v15 = v14:CreateWindow({
