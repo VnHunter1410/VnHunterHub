@@ -8,7 +8,7 @@ Notification("<Color=Red>Popcat Hub <Color=/>"):Display();
 wait(0.5);
 Notification("<Color=Yellow>Script made by Nguyen Minh Huy and VnHunter<Color=/>"):Display();
 Notification("<Color=Blue>https://discord.gg/jpyqysdtDa<Color=/>"):Display();
-Notification("<Color=Pink>Version 1.0.0<Color=/>"):Display();
+Notification("<Color=Pink>Version 1.0.0<Color,=/>"):Display();
 wait(1);
 repeat
     wait();
@@ -63,8 +63,8 @@ local v14 = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/rel
 local v15 = v14:CreateWindow({
     Title = "PopCat Hub",
     SubTitle = "Blox Fruit",
-    TabWidth = 160,
-    Theme = "Dark",
+    TabWidth = 175,
+    Theme = "Amethyst",
     Acrylic = false,
     Size = UDim2.fromOffset(500, 320),
     MinimizeKey = Enum.KeyCode.End
@@ -2405,7 +2405,7 @@ v23.MouseButton1Down:Connect(function()
     v47:Play();
     game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.End, false, game);
     v47.Completed:Connect(function()
-        v23.Rotation = 360;
+        v23.Rotation = 90;
     end);
     local v235 = v26:Create(v23, TweenInfo.new(0.2, Enum.EasingStyle.Bounce, Enum.EasingDirection.Out), {
         Size = UDim2.new(0, 60, 0, 60)
@@ -2431,18 +2431,6 @@ v16.Home:AddButton({
         setclipboard("https://discord.gg/jpyqysdtDa");
     end
 });
-v16.Home:AddButton({
-    Title = "Youtube: VnHunter",
-    Description = "Link Youtube người làm ra",
-    Callback = function()
-        setclipboard("https://youtube.com/@vnhunter-1410");
-    end
-v16.Home:AddButton({
-    Title = "Youtube: Nguyen Minh Huy",
-    Description = "Link Youtube người làm ra",
-    Callback = function()
-        setclipboard("https://youtube.com/@nghuyzzz");
-    end
 _G.FastAttackStrix_Mode = "Super Fast Attack";
 spawn(function()
     while wait() do
