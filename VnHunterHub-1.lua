@@ -16,9 +16,9 @@ until game.Players.LocalPlayer
 if  not game:IsLoaded() then
     game.Loaded:Wait();
 end
-if getgenv().Team = "Pirates" then
+if getgenv().Team == "Pirates" then
      game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam", "Pirates");
-elseif getgenv().Team = "Marines" then 
+elseif getgenv().Team == "Marines" then 
      game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam", "Marines");
 else
      game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam", "Pirates");
